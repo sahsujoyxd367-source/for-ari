@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Place For Ari 💗</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:'Comic Sans MS', cursive;
+background:linear-gradient(135deg,#ffd6f1,#ffe6fa,#ffd1e8);
+text-align:center;
+overflow-x:hidden;
+color:#ff3f9e;
+}
+
+h1{
+font-size:3.2em;
+margin-top:30px;
+animation:float 4s ease-in-out infinite;
+padding:0 15px;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+.subtitle{
+font-size:1.4em;
+margin-bottom:20px;
+padding:0 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:15px;
+}
+
+/* PHOTO AREA */
+
+.photos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
+}
+
+.photo{
+width:280px;
+max-width:90vw;
+height:340px;
+background:white;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+overflow:hidden;
+transition:transform .4s;
+}
+
+.photo:hover{
+transform:scale(1.05);
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* COMPLIMENT CARDS */
+
+.compliments{
+margin-top:40px;
+font-size:1.25em;
+line-height:1.7;
+}
+
+.card{
+background:#fff0f8;
+padding:18px;
+border-radius:20px;
+margin:15px auto;
+max-width:600px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* BUTTONS */
+
+button{
+padding:14px 28px;
+font-size:1.05em;
+border:none;
+border-radius:30px;
+background:#ff5fb2;
+color:white;
+cursor:pointer;
+margin-top:20px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff2e9a;
+}
+
+/* SECRET MESSAGE */
+
+.secret{
+display:none;
+margin-top:30px;
+background:#fff;
+padding:22px;
+border-radius:20px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* EMOJI RAIN */
+
+.emoji{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:fall linear forwards;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh)}
+100%{transform:translateY(110vh)}
+}
+
+/* MOUSE SPARKLES */
+
+.sparkle{
+position:fixed;
+font-size:16px;
+pointer-events:none;
+animation:spark 1s linear forwards;
+}
+
+@keyframes spark{
+0%{opacity:1;transform:scale(1)}
+100%{opacity:0;transform:scale(2)}
+}
+
+/* HEART EXPLOSION */
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:explode 1.5s forwards;
+pointer-events:none;
+}
+
+@keyframes explode{
+0%{transform:translateY(0) scale(1);opacity:1}
+100%{transform:translateY(-120px) scale(2);opacity:0}
+}
+
+footer{
+margin-top:60px;
+font-size:1.1em;
+padding-bottom:40px;
+padding-left:20px;
+padding-right:20px;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:600px){
+
+h1{
+font-size:2.2em;
+}
+
+.subtitle{
+font-size:1.2em;
+}
+
+.photos{
+flex-direction:column;
+align-items:center;
+}
+
+.photo{
+width:90vw;
+height:300px;
+}
+
+.card{
+font-size:1.05em;
+padding:16px;
+}
+
+button{
+width:80%;
+max-width:280px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>For Ari 💖</h1>
+<div class="subtitle">A tiny magical corner of the internet made just for you 🐰✨</div>
+
+<div class="container">
+
+<div class="photos">
+
+<div class="photo">
+<img src="images/ari1.jpg" alt="Ari Photo 1">
+</div>
+
+<div class="photo">
+<img src="images/ari2.jpg" alt="Ari Photo 2">
+</div>
+
+</div>
+
+<div class="compliments">
+
+<div class="card">🌸 Ari, you are unbelievably gorgeous.</div>
+<div class="card">🧸 You are the kind of cute that makes people smile instantly.</div>
+<div class="card">✨ Your presence makes the world feel softer and brighter.</div>
+<div class="card">🐰 You are adorable, kind, and truly one of a kind.</div>
+<div class="card">🌷 Talking to you is one of the happiest parts of the day.</div>
+<div class="card">💖 Someone somewhere is really glad you exist.</div>
+
+</div>
+
+<button onclick="showSecret()">Open a Secret Message 💌</button>
+
+<div class="secret" id="secret">
+
+<h2>💗 Hidden Message</h2>
+
+<p>Even if distance exists, this little website was made just to remind you that you are appreciated more than you probably realize.</p>
+
+<p>You are cute, beautiful, kind, and incredibly special.</p>
+
+<p>Never forget that. 🐰✨</p>
+
+</div>
+
+<button onclick="heartExplosion()">Press For Happiness 💕</button>
+
+<footer>
+Made with care for Ari 🧸💗
+</footer>
+
+</div>
+
+<script>
+
+function showSecret(){
+let s=document.getElementById('secret');
+s.style.display='block';
+}
+
+const emojis=['💖','✨','🐰','🌸','🧸','💗','🐣','💕','🌷'];
+
+function createEmoji(){
+const e=document.createElement('div');
+e.className='emoji';
+e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+e.style.left=Math.random()*100+'vw';
+e.style.animationDuration=(Math.random()*3+3)+'s';
+document.body.appendChild(e);
+
+setTimeout(()=>{e.remove();},6000);
+}
+
+setInterval(createEmoji,250);
+
+/* SPARKLES (disabled on touch devices automatically) */
+
+document.addEventListener('mousemove',e=>{
+const s=document.createElement('div');
+s.className='sparkle';
+s.innerText='✨';
+s.style.left=e.clientX+'px';
+s.style.top=e.clientY+'px';
+document.body.appendChild(s);
+
+setTimeout(()=>{s.remove();},1000);
+});
+
+function heartExplosion(){
+for(let i=0;i<25;i++){
+const h=document.createElement('div');
+h.className='heart';
+h.innerText='💖';
+h.style.left=(window.innerWidth/2 + (Math.random()*200-100))+'px';
+h.style.top=(window.innerHeight/2)+'px';
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove();},1500);
+}
+}
+
+let typed='';
+const secretWord='ari';
+
+document.addEventListener('keypress',e=>{
+typed+=e.key.toLowerCase();
+
+if(typed.includes(secretWord)){
+alert('🐰 Secret unlocked: Ari is the cutest person in the universe.');
+typed='';
+}
+});
+
+</script>
+
+</body>
+</html>
